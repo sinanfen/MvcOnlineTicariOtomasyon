@@ -4,45 +4,38 @@
                 Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
 
 <body>
-    <div class="page-wrapper">
-        <!-- Page Content-->
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-body table-responsive">
-                                <h5 class="header-title">Departman Listesi</h5>
-                                <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
-                                    <thead>
-                                        <tr class="table-active">
-                                            <th>ID</th>
-                                            <th>Departman Adı</th>
-                                            <th width="5%" class="text-center">Güncelle</th>
-                                            <th width="5%" class="text-center">Sil</th>
-                                            <th width="14%" class="text-center">Detay</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var item in Model)
-                                        {
-                            <tr>
-                                <td>@item.DepartmanId</td>
-                                <td>@item.DepartmanAd</td>
-                                <td width="5%" align="center"><a href="/Departman/DepartmanGetir/@item.DepartmanId" class="btn btn-warning">Güncelle</a></td>
-                                <td width="5%" align="center"><a href="/Departman/DepartmanSil/@item.DepartmanId" class="btn btn-danger">Sil</a></td>
-                                <td width="14%" align="center"><a href="/Departman/DepartmanDetay/@item.DepartmanId" class="btn btn-success">Departman Detay</a></td>
-                            </tr>
-}
-                                    </tbody>
-                                </table>
-                                <a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
-                            </div>
-                        </div>
+    <br />
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="card">
+                    <div class="card-body table-responsive">
+                        <h5 class="header-title">Departman Listesi</h5>
+                        <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
+                            <thead>
+                                <tr class="table-active">
+                                    <th>ID</th>
+                                    <th>Departman Adı</th>
+                                    <th width="5%" class="text-center">Güncelle</th>
+                                    <th width="5%" class="text-center">Sil</th>
+                                    <th width="14%" class="text-center">Detay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@item.DepartmanId</td>
+                                    <td>@item.DepartmanAd</td>
+                                    <td width="5%" align="center"><a href="/Departman/DepartmanGetir/@item.DepartmanId" class="btn btn-warning">Güncelle</a></td>
+                                    <td width="5%" align="center"><a href="/Departman/DepartmanSil/@item.DepartmanId" class="btn btn-danger">Sil</a></td>
+                                    <td width="14%" align="center"><a href="/Departman/DepartmanDetay/@item.DepartmanId" class="btn btn-success">Departman Detay</a></td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Departman/DepartmanEkle" class="btn btn-primary">Departman Ekle</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
 </body>

@@ -6,49 +6,42 @@
 }
 
 <body>
-    <div class="page-wrapper">
-        <!-- Page Content-->
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-body table-responsive">
-                                <h5 class="header-title">Cari Listesi</h5>
-                                <table id="example" class="table table-bordered table-hover" style="margin-top:20px;">
-                                    <thead>
-                                        <tr class="table-active">
-                                            <th>Cari Id</th>
-                                            <th>Ad</th>
-                                            <th>Soyad</th>
-                                            <th>Şehir</th>
-                                            <th>Mail</th>
-                                            <th  class="text-center">Güncelle</th>                                           
-                                            <th  class="text-center">Detaylar</th>
-                                        </tr>
-                                    </thead>
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>@item.CariId</td>
-                                            <td>@item.CariAd</td>
-                                            <td>@item.CariSoyad</td>
-                                            <td>@item.CariSehir</td>
-                                            <td>@item.CariMail</td>
-                                            <td align="center"><a href="/Cari/CariGetir/@item.CariId" class="btn btn-warning">Güncelle</a></td>                                           
-                                            <td align="center"><a href="/Cari/MusteriSatis/@item.CariId" class="btn btn-success">Satış Geçmişi</a></td>
-                                        </tr>
-                                    }
-                                </table>
-                                <a href="/Cari/YeniCari" class="btn btn-primary">Yeni Cari Ekle</a>
-                            </div>
-                        </div>
+    <br />
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="card">
+                    <div class="card-body table-responsive">
+                        <h5 class="header-title">Cari Listesi</h5>
+                        <table id="example" class="table table-bordered table-hover" style="margin-top:20px;">
+                            <thead>
+                                <tr class="table-active">
+                                    <th>Cari Id</th>
+                                    <th>Ad</th>
+                                    <th>Soyad</th>
+                                    <th>Şehir</th>
+                                    <th>Mail</th>
+                                    <th  class="text-center">Güncelle</th>                                           
+                                    <th  class="text-center">Detaylar</th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.CariId</td>
+                                    <td>@item.CariAd</td>
+                                    <td>@item.CariSoyad</td>
+                                    <td>@item.CariSehir</td>
+                                    <td>@item.CariMail</td>
+                                    <td align="center"><a href="/Cari/CariGetir/@item.CariId" class="btn btn-warning">Güncelle</a></td>                                           
+                                    <td align="center"><a href="/Cari/MusteriSatis/@item.CariId" class="btn btn-success">Satış Geçmişi</a></td>
+                                </tr>
+                            }
+                        </table>
+                        <a href="/Cari/YeniCari" class="btn btn-primary">Yeni Cari Ekle</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- jQuery  -->
     <script src="~/assets/js/jquery.min.js"></script>
 
   

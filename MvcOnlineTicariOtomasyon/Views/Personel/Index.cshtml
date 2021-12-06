@@ -6,49 +6,42 @@
 }
 
 <body>
-    <div class="page-wrapper">
-        <!-- Page Content-->
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-body table-responsive">
-                                <h5 class="header-title">Personel Listesi</h5>
-                                <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
-                                    <thead>
-                                        <tr class="table-active">
-                                            <th>Personel Ad</th>
-                                            <th>Personel Soyad</th>
-                                            <th>Görsel</th>
-                                            <th>Departman</th>
-                                            <th class="text-center">Güncelle</th>
-                                            <th class="text-center">Satışlar</th>
-                                        </tr>
-                                    </thead>
-                                    @foreach (var k in Model)
-                                    {
-                                        <tr>                                           
-                                            <td>@k.PersonelAd</td>
-                                            <td>@k.PersonelSoyad</td>
-                                            <td align="center" class="zoom">
-                                                <img class="rounded" style="width:150px; height:100px;" src="@k.PersonelGorsel" />
-                                            </td>
-                                            <td>@k.Departman.DepartmanAd</td>
-                                            <td width="15%" align="center"><a href="/Personel/PersonelGetir/@k.PersonelId" class="btn btn-warning">Güncelle</a></td>
-                                            <td width="15%" align="center"><a href="/Departman/DepartmanPersonelSatis/@k.PersonelId" class="btn btn-success">Detaylar</a></td>
-                                        </tr>
-                                     }
-                                </table>
-                                <a href="/Personel/PersonelEkle" class="btn btn-primary">Personel Ekle</a>
-                            </div>
-                        </div>
-                    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-body table-responsive">
+                    <h5 class="header-title">Personel Listesi</h5>
+                    <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
+                        <thead>
+                            <tr class="table-active">
+                                <th>Personel Ad</th>
+                                <th>Personel Soyad</th>
+                                <th>Görsel</th>
+                                <th>Departman</th>
+                                <th class="text-center">Güncelle</th>
+                                <th class="text-center">Satışlar</th>
+                            </tr>
+                        </thead>
+                        @foreach (var k in Model)
+                        {
+                            <tr>                                           
+                                <td>@k.PersonelAd</td>
+                                <td>@k.PersonelSoyad</td>
+                                <td align="center" class="zoom">
+                                    <img class="rounded" style="width:150px; height:100px;" src="@k.PersonelGorsel" />
+                                </td>
+                                <td>@k.Departman.DepartmanAd</td>
+                                <td width="15%" align="center"><a href="/Personel/PersonelGetir/@k.PersonelId" class="btn btn-warning">Güncelle</a></td>
+                                <td width="15%" align="center"><a href="/Departman/DepartmanPersonelSatis/@k.PersonelId" class="btn btn-success">Detaylar</a></td>
+                            </tr>
+                            }
+                    </table>
+                    <a href="/Personel/PersonelEkle" class="btn btn-primary">Personel Ekle</a>
                 </div>
             </div>
         </div>
     </div>
-
     <style>
         .zoom {
             padding: 50px;

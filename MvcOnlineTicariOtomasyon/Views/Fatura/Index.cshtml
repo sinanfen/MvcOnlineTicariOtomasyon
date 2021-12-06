@@ -4,79 +4,73 @@
     Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
 
 <body>
-    <div class="page-wrapper">
-        <!-- Page Content-->
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-body table-responsive">
-                                <h5 class="header-title">Satış Listesi</h5>
-                                <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
+    <br />
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="card">
+                <div class="card-body table-responsive">
+                    <h5 class="header-title">Satış Listesi</h5>
+                    <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
+                        <thead>
+                            <tr class="table-active">
+                                <th>Seri Sıra No</th>
+                                <th>Tarih</th>
+                                <th>Saat</th>
+                                <th>Toplam Fiyat</th>
+                                <th class="text-center">Güncelle</th>
+                                <th class="text-center">Detaylar</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.FaturaSeriNo @item.FaturaSiraNo</td>
+                                <td>@item.Tarih</td>
+                                <td>@item.Saat</td>
+                                <td>@item.Toplam₺</td>
+                                <td align="center"><a href="/Fatura/FaturaGetir/@item.FaturaId" class="btn btn-warning">Güncelle</a></td>
+                                <td align="center"><a href="/Fatura/FaturaDetay/@item.FaturaId" class="btn btn-success">Detaylar</a></td>
+                            </tr>
+                        }
+                    </table>
+
+                    <a href="/Fatura/FaturaEkle" class="btn btn-primary">Yeni Fatura Girişi</a>
+
+                    <!--burası popup başlangıc-->
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal1">Popup Penceresi</button>
+                    <div class="modal" id="Modal1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Poup Dialog</h2>
+                                </div>
+                                <div class="modal-body">
+                                <table class="table table-bordered table-hover">
                                     <thead>
-                                        <tr class="table-active">
-                                            <th>Seri Sıra No</th>
-                                            <th>Tarih</th>
-                                            <th>Saat</th>
-                                            <th>Toplam Fiyat</th>
-                                            <th class="text-center">Güncelle</th>
-                                            <th class="text-center">Detaylar</th>
+                                        <tr>
+                                            <td>Seri No</td>
+                                            <td>Sıra No</td>
+                                            <td>Tutar</td>
                                         </tr>
                                     </thead>
-                                    @foreach (var item in Model)
-                                    {
+                                @foreach (var x in Model)
+                                {
+                                    <tbody>
                                         <tr>
-                                            <td>@item.FaturaSeriNo @item.FaturaSiraNo</td>
-                                            <td>@item.Tarih</td>
-                                            <td>@item.Saat</td>
-                                            <td>@item.Toplam₺</td>
-                                            <td align="center"><a href="/Fatura/FaturaGetir/@item.FaturaId" class="btn btn-warning">Güncelle</a></td>
-                                            <td align="center"><a href="/Fatura/FaturaDetay/@item.FaturaId" class="btn btn-success">Detaylar</a></td>
+                                            <td>@x.FaturaSeriNo</td>
+                                            <td>@x.FaturaSiraNo</td>
+                                            <td>@x.Toplam</td>
+
                                         </tr>
-                                    }
-                                </table>
-
-                                <a href="/Fatura/FaturaEkle" class="btn btn-primary">Yeni Fatura Girişi</a>
-
-                                <!--burası popup başlangıc-->
-                                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#Modal1">Popup Penceresi</button>
-                                <div class="modal" id="Modal1">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h2 class="modal-title">Poup Dialog</h2>
-                                            </div>
-                                            <div class="modal-body">
-                                         <table class="table table-bordered table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <td>Seri No</td>
-                                                        <td>Sıra No</td>
-                                                        <td>Tutar</td>
-                                                    </tr>
-                                                </thead>
-                                            @foreach (var x in Model)
-                                            {
-                                                <tbody>
-                                                    <tr>
-                                                        <td>@x.FaturaSeriNo</td>
-                                                        <td>@x.FaturaSiraNo</td>
-                                                        <td>@x.Toplam</td>
-
-                                                    </tr>
-                                                </tbody>
-                                            }
-                                        </table>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </tbody>
+                                }
+                            </table>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
                                 </div>
-                                <!--burası popup bitişi-->
                             </div>
                         </div>
                     </div>
+                    <!--burası popup bitişi-->
                 </div>
             </div>
         </div>
