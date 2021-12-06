@@ -1,0 +1,53 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+
+<body>
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <h5 class="header-title">Kargo Listesi</h5>
+                                <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
+                                    <thead>
+                                        <tr class="table-active">                                        
+                                            <th>Personel</th>
+                                            <th>Alıcı</th>
+                                            <th>Takip Kodu</th>
+                                            <th>Tarih</th>
+                                            <th class="text-center">Detaylar</th>
+                                            <th class="text-center">QR Kod</th>
+                                          
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var k in Model)
+                                        {
+                                            <tr>                                           
+                                                <td>@k.Personel</td>
+                                                <td>@k.Alici</td>
+                                                <td>@k.TakipKodu</td>
+                                                <td>@k.Tarih</td>
+                                                <td class="text-center"><a href="/Kargo/KargoTakip/@k.TakipKodu/" class="btn btn-warning">Detay</a></td>
+                                                <td class="text-center"><a href="/Kargo/QR/@k.KargoDetayId/" class="btn btn-success">QR Kod</a></td>
+                                              
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <a href="/Kargo/YeniKargo" class="btn btn-primary">Yeni Kargo Ekle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

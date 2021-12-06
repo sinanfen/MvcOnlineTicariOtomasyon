@@ -1,0 +1,29 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cari
+@{ ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
+
+<body>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="mt-0 header-title">Kategori Bilgileri</h4>
+            <form class="form-group" method="post">
+                <div class="form-group">
+                    @Html.Label("Cari Adı")
+                    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Cari Soyadı")
+                    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Cari Şehir")
+                    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Cari Mail")
+                    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </div>
+            </form>
+        </div><!--end card-body-->
+    </div><!--end card-->
+
+</body>

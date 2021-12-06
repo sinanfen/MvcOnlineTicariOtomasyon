@@ -1,0 +1,208 @@
+﻿
+@{ Layout = null; }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Online Ticari Otomasyon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+
+    <link href="~/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="~/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="~/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="shortcut icon" href="~/assets/myImages/favicon.ico" type="image/x-icon">
+
+    <!-- App css -->
+
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/webpanel/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Top Bar Start -->
+    <div class="topbar">
+
+        <!-- LOGO -->
+        <div class="topbar-left" id="wrapper">
+            <a href="/Yapilacak/Index" class="logo">
+                <h3 class="mt-4" style="font-family:Arial">TİCARİ OTOMASYON</h3>
+            </a>
+        </div>
+        <!--end logo-->
+        <!-- Navbar -->
+        <nav class="navbar-custom">
+            <ul class="list-unstyled topbar-nav float-right mb-0">
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="false" aria-expanded="false">
+                        <img src="~/assets/images/users/user-1.png" alt="profile-user" class="rounded-circle" />
+                        <span class="ml-1 nav-user-name hidden-sm">Admin <i class="mdi mdi-chevron-down"></i> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i>Profil</a>
+                        <div class="dropdown-divider mb-0"></div>
+                        <a class="dropdown-item" href="/Login/LogOut/"><i class="ti-power-off text-muted mr-2"></i> Logout</a>
+                    </div>
+                </li>
+            </ul><!--end topbar-nav-->
+
+            <ul class="list-unstyled topbar-nav mb-0">
+                <li>
+                    <button class="nav-link button-menu-mobile waves-effect waves-light">
+                        <i class="ti-menu nav-icon"></i>
+                    </button>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- end navbar-->
+    </div>
+    <!-- Top Bar End -->
+    <!-- Left Sidenav -->
+
+    <div class="left-sidenav">
+        <div class="header-title ml-4">Ana Sayfa</div>
+        <ul class="metismenu left-sidenav-menu">
+            <li>
+                <a href="/Yapilacak/Index"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+            </li>
+        </ul>
+
+        <div class="header-title mt-4 ml-4">Tablolar</div>
+        <ul class="metismenu left-sidenav-menu">
+            <li>
+                <a href="/Kategori/Index"><i class="ti-layout-grid2"></i><span>Kategoriler</span></a>
+            </li>
+
+            <li>
+                <a href="/Urun/Index"><i class="ti-server"></i><span>Ürünler</span></a>
+            </li>
+
+            <li>
+                <a href="/Departman/Index"><i class="ti-crown"></i><span>Departmanlar</span></a>
+            </li>
+
+            <li>
+                <a href="/Cari/Index"><i class="ti-view-list-alt"></i><span>Cariler</span></a>
+            </li>
+
+            <li>
+                <a href="/Personel/Index"><i class="ti-user"></i><span>Personeller</span></a>
+            </li>
+
+            <li>
+                <a href="javascript: void(0);"><i class="ti-pie-chart"></i><span>Grafikler</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href="/Grafik/Index5"><i class="ti-control-record"></i>Pasta Grafiği</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Grafik/Index6"><i class="ti-control-record"></i>Çizgi Grafiği</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Grafik/Index7"><i class="ti-control-record"></i>Sütun Grafiği</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="header-title ml-4 mt-4">Rapor & Fatura</div>
+        <ul class="metismenu left-sidenav-menu">
+            <li>
+                <a href="/Satis/Index"><i class="ti-shopping-cart"></i><span>Satışlar</span></a>
+            </li>
+            <li>
+                <a href="/Fatura/Index"><i class="ti-layers-alt"></i><span>Faturalar</span></a>
+            </li>
+            <li>
+                <a href="/Fatura/Dinamik"><i class="ti-menu"></i><span>Dinamik Faturalar</span></a>
+            </li>
+            <li>
+                <a href="/Personel/PersonelListe"><i class="ti-eye"></i><span>Personel Tablosu</span></a>
+            </li>
+            <li>
+                <a href="/Kargo/Index"><i class="ti-package"></i><span>Kargolar</span></a>
+            </li>
+            <li>
+                <a href="/Urun/UrunListesi"><i class="ti-printer"></i><span>Pdf & Excel</span></a>
+            </li>
+
+            <li>
+                <a href="/Alertler/Index"><i class="ti-alarm-clock"></i><span>Alert</span></a>
+            </li>
+
+            <li>
+                <a href="javascript: void(0);"><i class="ti-bar-chart"></i><span>İstatistik</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link" href="/Istatistik/Index"><i class="ti-stats-up"></i>İstatistikler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Istatistik/KolayTablolar"><i class="ti-eye"></i>Hızlı Bakış</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/Galeri/Index"><i class="ti-gallery"></i><span>Galeri</span></a>
+            </li>
+
+            @if (User.IsInRole(("A")))
+            {
+<li>
+    <a href="/Urun/Deneme"><i class="ti-more-alt"></i><span>Deneme Sayfası</span></a>
+</li>}
+        </ul>
+    </div>
+    <!-- end left-sidenav-->
+
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/jquery-ui.min.js"></script>
+
+    <script src="~/assets/js/metismenu.min.js"></script>
+    <script src="~/assets/js/waves.js"></script>
+    <script src="~/assets/js/feather.min.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Buttons examples -->
+    <script src="~/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="~/plugins/datatables/jszip.min.js"></script>
+    <script src="~/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/plugins/datatables/buttons.colVis.min.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="~/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="~/assets/pages/jquery.datatable.init.js"></script>
+    <script src="~/plugins/flot-chart/jquery.canvaswrapper.js"></script>
+    <script src="~/plugins/datatables/vfs_fonts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+<head>
+    <link href="../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<br />
+
+<div>
+    @using (Html.BeginForm("QR", "Kargo", FormMethod.Post))
+    {
+        <input type="text" name="kod" />
+        <input type="submit" value="@ViewBag.qr" />
+    }
+
+    @if (ViewBag.kareKodImage != null)
+    {
+        <img src="@ViewBag.kareKodImage" alt="" style="width:400px" height="400px" />
+    }
+</div>
+
+
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/jquery-ui.min.js"></script>
+
+<script src="~/assets/js/metismenu.min.js"></script>
+<script src="~/assets/js/waves.js"></script>
+<script src="~/assets/js/feather.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.min.js"></script>
+<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+<!-- App js -->
+<script src="~/assets/js/app.js"></script>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<!-- Required datatable js -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>

@@ -1,0 +1,88 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Urun>
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
+
+@{ 
+    var id = 1;
+}
+
+<body>
+    <div class="page-wrapper">
+        <!-- Page Content-->
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <h5 class="header-title">Ürün Listesi</h5>
+                                <table id="datatable" class="table table-bordered table-hover" style="margin-top:20px;">
+                                    <thead>
+                                         <tr class="table-active">
+                                             <th>ID</th>
+                                             <th>Kategori</th>
+                                             <th>Ürün</th>
+                                             <th>Marka</th>
+                                             <th>Ürün Görseli</th>
+                                             <th>Stok Adedi</th>
+                                             <th>Alış Fiyatı</th>
+                                             <th>Satış Fiyatı</th>
+                                             <th width="5%" class="text-center">Güncelle</th>
+                                             <th width="5%" class="text-center">Sil</th>
+                                             <th width="8%" class="text-center">Satış Yap</th>
+                                         </tr>
+                                    </thead>
+                                    @foreach (var u in Model)
+                                    {
+                                         <tr>
+                                             <td>@u.UrunId</td>
+                                             <td>@u.Kategori.KategoriAd</td>
+                                             <td>@u.UrunAd</td>
+                                             <td>@u.Marka</td>
+                                             <td align="center" class="zoom">
+                                                <img class="rounded" style="width:130px; height:100px;" src="@u.UrunGorsel" />
+                                            </td>
+                                             <td>@u.Stok</td>
+                                             <td>@u.AlisFiyat ₺</td>
+                                             <td>@u.SatisFiyat ₺</td>
+                                             <td width="5%" align="center"><a href="/Urun/UrunGetir/@u.UrunId" class="btn btn-warning">Güncelle</a></td>
+                                             @*<td>@Html.ActionLink("Güncelle", "UrunGetir", "Urun", new { id = 1 } ,new { @class = "btn btn-warning" } )</td>*@
+                                             <td width="5%" align="center"><a href="/Urun/UrunSil/@u.UrunId" class="btn btn-danger">Sil</a></td>
+                                             <td width="8%" align="center"><a href="/Urun/SatisYap/@u.UrunId" class="btn btn-success">Satış Yap</a></td>
+                                         </tr>
+                                     }
+                                    
+                                </table>
+                                <a href="/Urun/YeniUrun" class="btn btn-primary">Ürün Ekle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery  -->
+  <style>
+        .zoom {
+            padding: 50px;
+            background-color: white;
+            transition: transform .2s; /* Animation */
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+            .zoom:hover {
+                transform: scale(2.5); /* (150% zoom)*/
+            }
+    </style>
+
+</body>
+
+
+
+
+
+
+

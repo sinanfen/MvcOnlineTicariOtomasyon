@@ -1,0 +1,54 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisYap";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Satış Yap</h4>
+                    <form class="form-group" method="post">
+                        <div class="form-group">
+                            @Html.Label("Ürün ID")
+                            <input type="text" name="UrunId" value="@ViewBag.dgr1" class="form-control" readonly />
+                            <br />
+                            @Html.Label("Personel ID")
+                            @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Cari ID")
+                            @Html.TextBoxFor(x => x.Cariid, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Adet")
+                            <input type="number" class="form-control" name="Adet" max="10" min="0" placeholder="Adet giriniz" id="txt1" onchange="sum();" />
+                            <br />
+                            @Html.Label("Fiyat")
+                            <input type="text" id="txt2" name="Fiyat" value="@ViewBag.dgr2 ₺" class="form-control" onkeyup="sum();" />
+                            <br />
+                            @Html.Label("Toplam Tutar")
+                            <input type="text" id="txt3" name="ToplamTutar" value="₺" class="form-control" readonly />
+                            <br />
+                            <button class="btn btn-primary">Satış Yap</button>
+                        </div>                      
+                    </form>
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>
+
+</body>
+

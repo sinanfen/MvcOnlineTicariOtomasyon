@@ -1,0 +1,50 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{ ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
+
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Ürün Bilgileri</h4>
+                   @using (Html.BeginForm("YeniUrun", "Urun", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                   {
+                        <div class="form-group">
+                            @Html.Label("Ürün Adı")
+                            @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Marka")
+                            @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Stok Adedi")
+                            @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Alış Fiyatı")
+                            @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Satış Fiyatı")
+                            @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Kategori")
+                            @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                            <br />
+                            <div class="form-group">
+                                @Html.Label("Ürün Görseli ")
+                                @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+                                <input type="file" name="UrunGorsel" required class="form-check" />
+                            </div>
+                            <br />
+                        </div>
+                        <button class="btn btn-info">Kaydet</button>
+                  }
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+    <!-- jQuery  -->
+ 
+</body>
+</html>

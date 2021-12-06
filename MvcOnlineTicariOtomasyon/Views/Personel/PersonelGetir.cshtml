@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{ ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Personel Bilgileri</h4>
+                    @using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group">
+                            @Html.HiddenFor(x => x.PersonelId)
+                            @Html.Label("Personel Adı")
+                            @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Personel Soyadı")
+                            @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Personel Görsel")
+                            <input type="file" name="PersonelGorsel" class="form-check"/>
+                            <br/>
+                            @Html.Label("Departman")
+                            @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-default" style="background-color:burlywood">Güncelle</button>
+                        </div>
+                     }
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+</body>

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CariKargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<table id="#" class="table table-bordered table-hover" ">
+    <thead>
+        <tr>
+            <th>Açıklama</th>
+            <th>Tarih</th>
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Aciklama</td>
+            <td>@item.TarihZaman</td>
+
+        </tr>
+    }
+</table>

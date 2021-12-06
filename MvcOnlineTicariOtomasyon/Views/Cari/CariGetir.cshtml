@@ -1,0 +1,40 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cari
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Cari Bilgileri</h4>
+                    @using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+                    {
+                          @Html.HiddenFor(x => x.CariId)
+                          @Html.Label("Cari Adı")                                
+                          @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+                          @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:orange" })
+                          <br />
+                          @Html.Label("Cari Soyadı")
+                          @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+                          @Html.ValidationMessageFor(x => x.CariSoyad, "", new { @style = "color:orange" })
+                          <br />
+                          @Html.Label("Şehir")
+                          @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+                          <br />
+                          @Html.Label("E-posta")
+                          @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+                          <br />
+                          <button class="btn btn-default" style="background-color:burlywood">Güncelle</button>
+                    }
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+
+</body>
+
+

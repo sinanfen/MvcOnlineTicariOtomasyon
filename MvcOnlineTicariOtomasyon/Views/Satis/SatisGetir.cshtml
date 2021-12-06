@@ -1,0 +1,45 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Satış Bilgileri</h4>
+                    @using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(x => x.SatisId)
+
+                        @Html.Label("Ürün")
+                        @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Cari")
+                        @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Personel")
+                        @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Adet")
+                        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Fiyat")
+                        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Toplam Tutar")
+                        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Tarih")
+                        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                        <br />
+                        <button class="btn btn-warning">Güncelle</button>
+                    }
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+</body>

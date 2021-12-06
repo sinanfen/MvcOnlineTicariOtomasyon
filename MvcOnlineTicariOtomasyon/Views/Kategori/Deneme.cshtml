@@ -1,0 +1,84 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Class3
+@{
+    ViewBag.Title = "Deneme";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+<head>
+    <link href="../plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+
+<br />
+<div>
+    <h2>Kategoriler - Ürünler</h2>
+</div>
+<br />
+<div>
+    @Html.Label("Kategoriler")
+    @Html.DropDownList("DrpKategori", Model.Kategoriler, "--Kategori Seçiniz--", new { @class = "form-control" })
+    <br />
+    @Html.Label("Ürünler")
+    @Html.DropDownList("DrpUrun", Model.Urunler, "--Ürün Seçiniz--", new { @class = "form-control" })
+</div>
+
+
+
+<script>
+
+    $(function () {
+
+        $('#DrpKategori').change(function () {
+
+            var id = $('#DrpKategori').val();
+
+            $.ajax({
+
+                url: '/Kategori/UrunGetir',
+
+                data: { p: id },
+
+                type: "POST",
+
+                dataType: "Json",
+
+                success: function (data) {
+
+                    console.log(data);
+
+                    $('#DrpUrun').empty();
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        $('#DrpUrun').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+
+<script src="~/thumber/js/jquery-3.3.1.min.js"></script>
+<script src="~/assets/js/jquery-ui.min.js"></script>
+
+<script src="~/assets/js/metismenu.min.js"></script>
+<script src="~/assets/js/waves.js"></script>
+<script src="~/assets/js/feather.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.min.js"></script>
+
+<!-- App js -->
+<script src="~/assets/js/app.js"></script>

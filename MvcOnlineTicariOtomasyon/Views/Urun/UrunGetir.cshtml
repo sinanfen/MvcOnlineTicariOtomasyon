@@ -1,0 +1,47 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{ ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Ürün Bilgileri</h4>
+                    @using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(x => x.UrunId)
+                        @Html.Label("Ürün Adı")
+                        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Marka")
+                        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Stok Adedi")
+                        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Alış Fiyatı")
+                        @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Satış Fiyatı")
+                        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Kategori")
+                        @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Ürün Görsel")
+                        <input type="file" name="UrunGorsel" class="form-check"/>
+                        <br />
+                        @Html.Label("Durum")
+                        @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+                        <br />
+                        <button class="btn btn-warning">Güncelle</button>
+                     }
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+    <!-- jQuery  -->
+</body>
+

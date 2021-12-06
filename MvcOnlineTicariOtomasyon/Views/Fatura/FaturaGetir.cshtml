@@ -1,0 +1,44 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Fatura
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+}
+
+<body>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mt-0 header-title">Fatura Bilgileri</h4>
+                    @using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(x => x.FaturaId)
+                        @Html.Label("Fatura Seri No")
+                        @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Fatura Sıra No")
+                        @Html.TextBoxFor(x => x.FaturaSiraNo, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Vergi Dairesi")
+                        @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Tarih")
+                        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Saat")
+                        @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Teslim Eden")
+                        @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+                        <br />
+                        @Html.Label("Teslim Alan")
+                        @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+                        <br />
+                        <button class="btn btn-warning">Güncelle</button>
+                    }
+                </div>
+            </div><!--end card-body-->
+        </div>
+    </div>
+</body>

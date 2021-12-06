@@ -1,0 +1,19 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
+
+@{ ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_AdminLayout2.cshtml"; }
+
+<body>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="mt-0 header-title">Kategori Bilgileri</h4>
+            <form class="form-group" method="post">
+                <div class="form-group">
+                    @Html.Label("Kategori Adı")
+                    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control"})
+                </div>
+                <button class="btn btn-info">Kaydet</button>
+            </form>
+        </div><!--end card-body-->
+    </div><!--end card-->
+</body>

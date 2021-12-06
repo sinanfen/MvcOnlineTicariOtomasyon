@@ -1,0 +1,27 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+
+@{ ViewBag.Title = "DepartmanEkle";
+   Layout = "~/Views/Shared/_AdminLayout2.cshtml";
+    }
+
+<!-- Responsive datatable examples -->
+<link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+<body>
+
+    <br />
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mt-0 header-title">Kategori Bilgileri</h4>
+            <form class="form-group" method="post">
+                <div class="form-group">
+                    @Html.HiddenFor(x=>x.DepartmanId)
+                    @Html.Label("Departman Adı")
+                    @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+                </div>
+                <button class="btn btn-info">Kaydet</button>
+            </form>
+        </div><!--end card-body-->
+    </div><!--end card-->
+
+</body>
+
